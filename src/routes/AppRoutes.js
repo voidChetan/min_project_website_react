@@ -1,17 +1,20 @@
 import React from 'react';
-// import { BrowserRouter, Route, Routes } from 'react-router-dom';
-// import Home from '../pages/Home';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from '../Components/UI/Header';
 
 const AppRoutes = () => {
 
     return (
         <div>
-            {/* <BrowserRouter>
+            <BrowserRouter>
+            <Header></Header>
             <Routes>
-                <Route path='/Home' element={<Home></Home>}></Route>
+                {/* <Route path='/Home' element={<Home></Home>}></Route> */}
             </Routes>
 
-            </BrowserRouter> */}
+            </BrowserRouter>
+           
+
         </div>
     );
 };
