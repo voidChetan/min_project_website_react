@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { showProjectList } from '../services/ProjectService';
+import { showProjectList,editProject,onDeleteProject } from '../services/ProjectService';
+import { useNavigate,Link } from 'react-router-dom';
 
 const ProjectList = () => {
+    let navigate = useNavigate();
     const [isShowForm, setIsShowForm] = useState(false);
     const [isShowCard, setIsShowCard] = useState(false);
     const [isLoader, setIsLoader] = useState(true);
@@ -38,7 +40,51 @@ const ProjectList = () => {
     const showTable = () => {
         setIsShowCard(false);
     };
-
+    const AddData = () => {
+        navigate('/NewProject');
+    };
+   
+    const onEdit = (projectId) => {
+        editProject(projectId).then((data) => {
+            // Extract project data from the response
+            const projectData = data.data;
+            // Update the state with the retrieved project data
+            setProjectObj({
+                projectId: projectData.projectId,
+                projectShortName: projectData.projectShortName,
+                projectLongName: projectData.projectLongName,
+                description: projectData.description,
+                thumbnailName: projectData.thumbnailName,
+                bannerImageName: projectData.bannerImageName,
+                liveVersionUrl: projectData.liveVersionUrl,
+                projectCategoryId: projectData.projectCategoryId,
+                flowChartImageName: projectData.flowChartImageName,
+                flowChartEmialId: projectData.flowChartEmialId,
+                createdOn: projectData.createdOn,
+                modifiedOn: projectData.modifiedOn,
+                tags: projectData.tags,
+                apiControllerName: projectData.apiControllerName,
+                apiProjectName: projectData.apiProjectName,
+                apiHostedUrl: projectData.apiHostedUrl,
+                gitHubRepoUrl: projectData.gitHubRepoUrl,
+                showOnLandingPage: projectData.showOnLandingPage,
+                isPrivate: projectData.isPrivate
+            });
+        }).catch((error) => {
+            console.error('Error fetching project data:', error);
+        });
+    }
+     //Delete
+     const deleteProjectData = (projectId) => {
+        onDeleteProject(projectId).then((data) => {
+            if (data.result) {
+                alert("Project Deleted Successfully");
+                getAllProjectData();
+            } else {
+                alert(data.message);
+            }
+        })
+    }
     return (
         <div className='container-fluid mt-3'>
             <div className='row'>
@@ -46,11 +92,10 @@ const ProjectList = () => {
                     <div className='card'>
                         <div className='card-header' style={{ backgroundColor: '#03748A' }}>
                             <div className='row'>
-                                <div className='col-6 text-start'>
+                                <div className='col-2 text-start'>
                                     <strong className='text-white'>Project Form</strong>
                                 </div>
-
-                                <div className='col-6 text-end '>
+                                <div className='col-8 text-end'>
                                     {!isShowCard && (
                                         <button className='btn btn-body p-0 outline' onClick={showCard}>
                                             <i className='fa fa-th fa-lg text-white' aria-hidden='true'></i>
@@ -62,6 +107,10 @@ const ProjectList = () => {
                                         </button>
                                     )}
                                 </div>
+                                <div className='col-2 text-end'>
+                                        <button className='btn btn-danger btn-sm' onClick={AddData}>Add Data</button>
+                                    </div>
+                             
                             </div>
                         </div>
 
@@ -100,16 +149,12 @@ const ProjectList = () => {
                                                     <td>{item.projectShortName}</td>
                                                     <td>{displayDate(item.createdOn)}</td>
                                                     <td>{item.categoryName}</td>
-                                                    <td>
-                                                        <button className='btn btn-sm btn-success'>
-                                                            <i className='fa fa-pencil'></i>
-                                                        </button>
-                                                    </td>
-                                                    <td>
-                                                        <button className='btn btn-sm btn-danger'>
-                                                            <i className='fa fa-trash-o'></i>
-                                                        </button>
-                                                    </td>
+                                                 
+                                                    <td><button className='btn btn-sm btn-success' to="/NewProject" onClick={() => { onEdit(item.projectId) }}><i className='fa fa-pencil'></i></button></td>
+                                                    <td><button className='btn btn-sm btn-danger' onClick={() => { deleteProjectData(item.projectId) }}><i className='fa fa-trash-o'></i></button></td>
+                                                 
+                                                   
+                                                       
                                                 </tr>
                                             ))
                                         )}

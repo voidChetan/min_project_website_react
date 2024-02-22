@@ -8,3 +8,5 @@ export const UPDATE_PROJECT="UpdateProject"
 export const ADD_UPDATE_CATEGORY ="AddUpdateCategory"
 export const DELETE_CATEGORY_BY_ID= "DeleteCategoryById"
 export const GET_ALL_QURIES = "GetAllQuries";
+export const EDIT_PROJECT = "GetProjectProjectId?id=";
+export const DELETE_PROJECT = "DeleteProjectById?id=";
