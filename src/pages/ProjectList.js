@@ -212,12 +212,7 @@ const ProjectList = () => {
                                     {projectList.map((item, index) => (
 
                                         <div key={index} className='col-lg-3 col-md-6 col-sm-12 mb-4'>
-                                            <div className='card' style={{ height: '100%' }}>
-                                                <div className='card-header' style={{ backgroundColor: '#03748A' }}>
-                                                    <h5 className='card-title text-center text-white'>
-                                                        <b>{item.projectShortName}</b>
-                                                    </h5>
-                                                </div>
+                                            <div className='card' style={{ height: '100%' }}> 
                                                 <img
                                                     className='card-img-top img-fluid'
                                                     src={`http://storeapi.gerasim.in/customer/${item.thumbnailName}`}
@@ -226,30 +221,16 @@ const ProjectList = () => {
                                                 />
                                                 <div className='card-body d-flex flex-column'>
                                                     <div className='row d-flex'>
-                                                        <div className='col-6 text-start'><b>{displayDate(item.createdOn)}</b></div>
-                                                        <div className='col-6 text-end'><b>{item.categoryName}</b></div>
-                                                    </div>
-                                                    <p className='card-text'>
-                                                        <div
-                                                            dangerouslySetInnerHTML={{
-                                                                __html: item.description.length > 100 ? `${item.description.substring(0, 100)}...` : item.description,
-                                                            }}
-                                                        ></div>
-                                                    </p>
-                                                    <div className='mt-auto'>
-                                                        <div className='row'>
-                                                            <div className='col-6'>
-                                                                <button className='btn btn-sm btn-success w-100'>
-                                                               <button className='btn btn-sm btn-success' to="/NewProject" onClick={() => { onEdit(item.projectId) }}><i className='fa fa-pencil'></i></button>
-                                                   
-                                                                </button>
-                                                            </div>
-                                                            <div className='col-6'>
-                                                                <button className='btn btn-sm btn-danger w-100'>
-                                                               <button className='btn btn-sm btn-danger' onClick={() => { deleteProjectData(item.projectId) }}><i className='fa fa-trash-o'></i></button>
-                                                                </button>
-                                                            </div>
-                                                        </div>
+                                                        <div className='col-6 text-start'><small>{item.projectShortName}</small></div>
+                                                        <div className='col-6 text-end'><small>{item.categoryName}</small></div>
+                                                    </div> 
+                                                    <div className=' '> 
+                                                     <i className='fa fa-pencil text-success edit-icon' to="/NewProject" onClick={() => { onEdit(item.projectId) }}></i>
+                                                                
+                                                    <i className='fa fa-trash-o text-danger delete-icon' onClick={() => { deleteProjectData(item.projectId) }}></i>
+                                                                
+                                                               
+                                                       
                                                     </div>
                                                 </div>
                                             </div>
