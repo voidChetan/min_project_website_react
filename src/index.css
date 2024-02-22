@@ -11,6 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+<<<<<<< HEAD
 .call-to-action {
   margin-top: 120px;
   background-image: url(./assets/Images/banner-01.jpg);
@@ -19,4 +20,17 @@ code {
   background-position: center center;
   padding: 75px 0px;
   background-color: #22b3c1;
+=======
+ 
+.edit-icon {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+
+.delete-icon {
+  position: absolute;
+  top: 0%;
+  right: 11%;
+>>>>>>> d14bb28992d2d321b351d8baf6444db084383757
 }

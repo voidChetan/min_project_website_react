@@ -14,4 +14,15 @@ export const DELETE_PROJECT_BY_ID= "DeleteProjectById"
 export const UPDATE_PROJECT="UpdateProject"
 export const ADD_UPDATE_CATEGORY ="AddUpdateCategory"
 // export const DELETE_CATEGORY_BY_ID= "DeleteCategoryById"
+export const Add_QURIES="AddUpdateQuery";
+// export const GET_ALL_QURIES ="GetAllQuries";
+// export const DELETE_CATEGORY_BY_ID= "DeleteCategoryById"
+
+
+
+export const ADD_PROJECT = "CreateNewProject";
+export const GET_CATEGORY_NAME = "GetAllProjectCategories";
+// export const DELETE_CATEGORY_BY_ID= "DeleteCategoryById"
 export const GET_ALL_QURIES = "GetAllQuries";
+export const EDIT_PROJECT = "GetProjectProjectId?id=";
+export const DELETE_PROJECT = "DeleteProjectById?id=";
