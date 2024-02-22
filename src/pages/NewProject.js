@@ -1,6 +1,7 @@
-import React from 'react';
-import { useState, useEffect, useRef, useMemo, useNavigate } from 'react';
-import { addProjectData, getCategoryName, updateProject, getDateOnly, fileUpload } from '../services/Api';
+
+import { useState, useEffect, useRef, useMemo} from 'react';
+import { useNavigate,} from 'react-router-dom';
+import { addProjectData, getCategoryName, getDateOnly, fileUpload } from '../services/ProjectService';
 import JoditEditor from 'jodit-react';
 
 const NewProject = ({ placeholder }) => {
@@ -153,18 +154,18 @@ const NewProject = ({ placeholder }) => {
     }
 
     const updateAllProjectList = () => {
-        updateProject(projectObj).then((data) => {
-            if (data.result) {
-                alert('Project Updated Sucessfully')
-                // getAllProjectList();
-            } else {
-                alert(data.message)
-            }
-        })
+        // updateProject(projectObj).then((data) => {
+        //     if (data.result) {
+        //         alert('Project Updated Sucessfully')
+        //         // getAllProjectList();
+        //     } else {
+        //         alert(data.message)
+        //     }
+        // })
     }
 
     const projectList = () => {
-        navigate('/ProjectList');
+        navigate('/Project');
     }
 
     return (
@@ -177,7 +178,7 @@ const NewProject = ({ placeholder }) => {
                             <div className="card-header" style={{ backgroundColor: '#03748A' }}>
                                 <div className="row">
                                     <div className="col-6 text-start"><strong className='text-white'>Project Form</strong></div>
-                                    <div className='col-6' text-end><button className='btn btn-danger' onClick={projectList}>Project List</button></div>
+                                    <div className='col-6 text-end'><button className='btn btn-danger' onClick={projectList}>Project List</button></div>
                                 </div>
                             </div>
                             <div className='card-body'>
