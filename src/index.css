@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.call-to-action {
+  margin-top: 120px;
+  background-image: url(./assets/Images/banner-01.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 75px 0px;
+  background-color: #22b3c1;
+}
+ 
+.edit-icon {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+
+.delete-icon {
+  position: absolute;
+  top: 0%;
+  right: 11%;
+}
