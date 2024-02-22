@@ -154,19 +154,23 @@ const Category = () => {
                 <div className='row mt-3'>
                     <div className={`${isShowForm ? 'col-8' : 'col-12'}`}>
                         <div className='card'>
-                            <div className='card-header' style={{ backgroundColor: '#03748A' }}>
-                                <div className='row'>
+                            <div className='row '>
+                                <div className='card-header' style={{ backgroundColor: '#03748A' }}>
+                                    <div className='row d-flex justify-content-between'>
 
-                                    <div className='col-6 text-start'>
-                                        <strong className='text-white'>Category List</strong>
+                                        <div className='col-6 text-start'>
+                                            <strong className='text-white'>Category List</strong>
+                                        </div>
+
+                                        <div className='col-2 text-end'>
+                                            <button className='btn btn-info border-0  ' style={{ outline: 'none' }} onClick={showForm}>Add Data</button>
+                                        </div>
+
                                     </div>
-
-                                    <div className='col-2 text-end'>
-                                        <button className='btn btn-info border-0  ' style={{ outline: 'none' }} onClick={showForm}>Add Data</button>
-                                    </div>
-
                                 </div>
+
                             </div>
+
                             {
                                 !isShowCard && <div className='card-body'>
                                     <table className='table table-bordered  table-striped'>
