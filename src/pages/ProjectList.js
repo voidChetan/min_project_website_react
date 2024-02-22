@@ -4,11 +4,35 @@ import { useNavigate,Link } from 'react-router-dom';
 
 const ProjectList = () => {
     let navigate = useNavigate();
+    let editnavigate = useNavigate();
     const [isShowForm, setIsShowForm] = useState(false);
     const [isShowCard, setIsShowCard] = useState(false);
     const [isLoader, setIsLoader] = useState(true);
     const [projectList, setProjectList] = useState([]);
 
+    const [projectObj, setProjectObj] = useState(
+        {
+            projectId: 0,
+            projectShortName: "",
+            projectLongName: "",
+            description: "",
+            thumbnailName: "",
+            bannerImageName: "",
+            liveVersionUrl: "",
+            projectCategoryId: 0,
+            flowChartImageName: "",
+            flowChartEmialId: "",
+            createdOn: new Date(),
+            modifiedOn: new Date(),
+            tags: "",
+            apiControllerName: "",
+            apiProjectName: "",
+            apiHostedUrl: "",
+            gitHubRepoUrl: "",
+            showOnLandingPage: false,
+            isPrivate: false
+        }
+    );
     //Get Project List
     const getAllProjectData = () => {
         showProjectList().then((data) => {
@@ -44,11 +68,27 @@ const ProjectList = () => {
         navigate('/NewProject');
     };
    
+
+    // const onEdit = (projectId) => {
+
+    //     editProject(projectId).then((data) => {
+    //         console.log(data)
+    //         if (data.result) {
+    //             editnavigate('/NewProject');
+    //             setProjectObj(data.data)
+                
+    //         }
+          
+    //         else {
+    //             alert(data.message)
+    //         }
+    //     })
+    // }
+
     const onEdit = (projectId) => {
         editProject(projectId).then((data) => {
-            // Extract project data from the response
             const projectData = data.data;
-            // Update the state with the retrieved project data
+            editnavigate('/NewProject');
             setProjectObj({
                 projectId: projectData.projectId,
                 projectShortName: projectData.projectShortName,
@@ -74,6 +114,7 @@ const ProjectList = () => {
             console.error('Error fetching project data:', error);
         });
     }
+
      //Delete
      const deleteProjectData = (projectId) => {
         onDeleteProject(projectId).then((data) => {
@@ -199,12 +240,13 @@ const ProjectList = () => {
                                                         <div className='row'>
                                                             <div className='col-6'>
                                                                 <button className='btn btn-sm btn-success w-100'>
-                                                                    <i className='fa fa-pencil'></i>
+                                                               <button className='btn btn-sm btn-success' to="/NewProject" onClick={() => { onEdit(item.projectId) }}><i className='fa fa-pencil'></i></button>
+                                                   
                                                                 </button>
                                                             </div>
                                                             <div className='col-6'>
                                                                 <button className='btn btn-sm btn-danger w-100'>
-                                                                    <i className='fa fa-trash-o'></i>
+                                                               <button className='btn btn-sm btn-danger' onClick={() => { deleteProjectData(item.projectId) }}><i className='fa fa-trash-o'></i></button>
                                                                 </button>
                                                             </div>
                                                         </div>
