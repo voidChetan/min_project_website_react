@@ -125,7 +125,7 @@ const ProjectList = () => {
                                 <div className='row'>
                                     {projectList.map((item, index) => (
 
-                                        <div key={index} className='col-lg-4 col-md-6 col-sm-12 mb-4'>
+                                        <div key={index} className='col-lg-3 col-md-6 col-sm-12 mb-4'>
                                             <div className='card' style={{ height: '100%' }}>
                                                 <div className='card-header' style={{ backgroundColor: '#03748A' }}>
                                                     <h5 className='card-title text-center text-white'>
@@ -136,7 +136,7 @@ const ProjectList = () => {
                                                     className='card-img-top img-fluid'
                                                     src={`http://storeapi.gerasim.in/customer/${item.thumbnailName}`}
                                                     alt='Card cap'
-                                                    style={{ height: '200px', objectFit: 'cover' }}
+                                                    style={{ height: '120px', objectFit: 'cover' }}
                                                 />
                                                 <div className='card-body d-flex flex-column'>
                                                     <div className='row d-flex'>
