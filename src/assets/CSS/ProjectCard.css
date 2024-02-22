@@ -1,0 +1,49 @@
+.main-page {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.main-page em {
+    font-style: normal;
+    color: #22b3c1;
+}
+
+.main-page h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #2a2a2a;
+    font-weight: 700;
+}
+
+.carditems .item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #22b3c1;
+}
+
+.projectIMG {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+}
+
+.projectIMG img {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 23px;
+}
+
+.projectIMG .image {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+.text-button {
+    margin-top: 20px;
+}
+
+.text-button a {
+    margin-right: 10px;
+}
