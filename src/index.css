@@ -12,3 +12,14 @@ code {
     monospace;
 }
  
+.edit-icon {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+
+.delete-icon {
+  position: absolute;
+  top: 0%;
+  right: 11%;
+}
