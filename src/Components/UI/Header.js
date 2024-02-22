@@ -32,7 +32,7 @@ const Header = () => {
                                     </li>                                   
                                     <li className="nav-item">
                                         <Link className="nav-link  text-white" to="/Query">Query</Link>
-                                    </li>
+                                    </li>                                   
                                     
                                 </ul>
                             </div>
