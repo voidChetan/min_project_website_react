@@ -15,4 +15,10 @@ const getAllQueries = async () => {
     return result.data
 }
 
-export { AddQuries,getAllQueries };
+
+
+const showQueryList = async () => {
+    const result = await axios.get(apiEndPoint + myconstant.GET_ALL_QURIES);
+    return result.data.data
+}
+export {showQueryList,AddQuries,getAllQueries}
