@@ -1,10 +1,12 @@
 import React from 'react';
-import ProjectCard from './ProjectCard';
+import Slider from './Slider';
+import '../assets/CSS/slider.css';
+
 
 const Home = () => {
     return (
         <div>
-            Home
+           <Slider />
         </div>
     );
 };
