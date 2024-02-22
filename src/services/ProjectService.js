@@ -9,6 +9,12 @@ const GetProjectsForMainPage = async () => {
     } catch (error) {
         console.log(error);
     }
-};
+}; 
 
-export { GetProjectsForMainPage };
+const showProjectList = async () => {
+    const result = await axios.get(apiEndPoint + myconstant.GET_ALL_PROJECT);
+    return result.data.data
+}
+ 
+
+export { GetProjectsForMainPage,showProjectList };
