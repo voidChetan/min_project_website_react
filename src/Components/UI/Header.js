@@ -5,6 +5,7 @@ import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Logo from '../../assets/Images/logo-3.png';
 
+
 const Header = () => {
     const isLoggedIn = localStorage.getItem('userinfo');
     const userInfo = JSON.parse(isLoggedIn);
@@ -25,13 +26,11 @@ const Header = () => {
 
     return (
         <div>
-
-
             <div className="container-fluid p-0"></div>
             <div className="row">
                 <div className="col-12">
                     <nav className="navbar navbar-expand-md navbar-dark" style={{ backgroundColor: '#22b3c1' }}>
-                        <img src={Logo} className="img-fluid" alt="Logo" />
+                        <img src={Logo} className="img-fluid" alt="Logo" style={{marginLeft:'16px',width:'150px',height:'60px'}}/>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
