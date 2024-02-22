@@ -1,9 +1,36 @@
 import React from 'react';
+import ProjectCard from './ProjectCard';
+import '../assets/CSS/Home.css'
 
 const Home = () => {
     return (
-        <div>
-            Home
+        <div className="container">
+            <div className="row mt-5">
+                <div className="col-lg-7">
+                    <div className="section-heading">
+                        <h2>Welcome to Mini Project Ideas</h2>
+                        <p className="section-p">
+                            A portal where your search ends for Project Idea, Wide range of
+                            projects with source code and a great Commuinity of Experts
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <ProjectCard></ProjectCard>
+
+            <footer>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <p>
+                                Copyright © 2023 <a href="#">Mini Project Ideas</a> All rights
+                                reserved.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
         </div>
     );
 };

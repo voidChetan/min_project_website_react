@@ -6,8 +6,8 @@ function App() {
     <div>
       <AppRoutes></AppRoutes>
 
+      {/* <AppRoutes></AppRoutes>      */}
     </div>
   );
 }
-
 export default App;
