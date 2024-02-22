@@ -1,10 +1,14 @@
 import React from 'react';
-import ProjectCard from './ProjectCard';
+import Slider from './Slider';
+import '../assets/CSS/slider.css';
 import '../assets/CSS/Home.css'
+
 
 const Home = () => {
     return (
-        <div className="container">
+        <div>
+           <Slider />
+           <div className="container">
             <div className="row mt-5">
                 <div className="col-lg-7">
                     <div className="section-heading">
@@ -30,7 +34,7 @@ const Home = () => {
                     </div>
                 </div>
             </footer>
-
+        </div>
         </div>
     );
 };
