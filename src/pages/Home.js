@@ -1,7 +1,8 @@
 import React from 'react';
 import Slider from './Slider';
 import '../assets/CSS/slider.css';
-import '../assets/CSS/Home.css'
+import '../assets/CSS/Home.css';
+import ProjectCard from './ProjectCard';
 
 
 const Home = () => {
