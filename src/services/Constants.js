@@ -6,3 +6,8 @@ export const DELETE_PROJECT_BY_ID= "DeleteProjectById"
 export const UPDATE_PROJECT="UpdateProject"
 export const ADD_UPDATE_CATEGORY ="AddUpdateCategory"
 export const DELETE_CATEGORY_BY_ID= "DeleteCategoryById"
+
+
+
+export const ADD_PROJECT = "CreateNewProject";
+export const GET_CATEGORY_NAME = "GetAllProjectCategories";
