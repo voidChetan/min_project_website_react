@@ -12,8 +12,6 @@ const GetProjectsForMainPage = async () => {
 }; 
 
 
-
-
 const getDateOnly = (date)=>{
     const myDate  = new Date(date);
     const year = myDate.getFullYear();
@@ -65,5 +63,14 @@ const onDeleteProject = async (id) => {
 };
 
 
-export { GetProjectsForMainPage,showProjectList, getDateOnly, addProjectData, getCategoryName, fileUpload,editProject,onDeleteProject  };
+const GetProjectProjectId = async (projectId) => {
+    try {
+        const result = await axios.get(`${apiEndPoint}${myconstant.GET_PROJECT_BY_ID}?id=${projectId}`);
+        return result.data.data;
+    } catch (error) {
+        console.error('Error getting project:', error);
+        throw error;
+    }
+};
+export { GetProjectsForMainPage,showProjectList, getDateOnly, addProjectData, getCategoryName, fileUpload,editProject,onDeleteProject,GetProjectProjectId  };
 

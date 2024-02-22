@@ -2,8 +2,14 @@ import React, { useEffect, useState } from 'react';
 import '../assets/CSS/ProjectCard.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 const ProjectCard = (props) => {
+    const navigate = useNavigate();
+    const OpenProduct = (project) => {
+        navigate(`/Explore?id=${project.projectId}`, { state: project });
+    }
+    
     return (
         <div className='container'>
             <div className="row">
@@ -27,7 +33,7 @@ const ProjectCard = (props) => {
                                                         <div dangerouslySetInnerHTML={{ __html: item.description.length > 100 ? `${item.description.substring(0, 50)}...` : item.description }} />
                                                         <div className="text-button">
                                                             <a target='_blank' className="btn btn-success text-white mr-2" href={item.liveVersionUrl}>Live Version <FontAwesomeIcon className='icon' icon={faArrowRight} /></a>
-                                                            <button className="btn btn-sm btn-secondary me-2">Explore</button>
+                                                            <button className="btn btn-sm btn-secondary me-2" onClick={() => OpenProduct(item)}>Explore</button>
                                                         </div>
                                                     </div>
                                                 </div>
