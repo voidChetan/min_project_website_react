@@ -51,8 +51,7 @@ const ProjectList = () => {
         setIsShowCard(false);
     };
     const AddData = () => {
-      
-        navigate('/NewProject', { state: { project: { /* default or placeholder data */ } } });
+    navigate(`/NewProject?id=`);
     };
     
     

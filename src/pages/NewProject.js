@@ -4,8 +4,9 @@ import { useNavigate, useLocation} from 'react-router-dom';
 import { addProjectData, getCategoryName, getDateOnly, fileUpload, updateProject } from '../services/ProjectService';
 import JoditEditor from 'jodit-react';
 
-const NewProject = ({ placeholder}) => {
+
     
+const NewProject = ({ placeholder }) => {
     const [projectObj, setProjectObj] = useState(
         {
             projectId: 0,
@@ -139,7 +140,7 @@ const NewProject = ({ placeholder}) => {
     }
 
        const reset = () => {
-        setFormSubmited(true)
+        setFormSubmited(false);
            setProjectObj({
             projectId: 0,
             projectShortName: "",
@@ -182,7 +183,6 @@ const NewProject = ({ placeholder}) => {
     const projectList = () => {
         navigate('/Project');
     }
-   
 
     return (
         <div>
@@ -395,7 +395,6 @@ const NewProject = ({ placeholder}) => {
                                        
                                         {
                                         projectObj.projectId ==0 && <button className='btn btn-success btn-primary' onClick={addAllProjectData}>Add Project</button>
-                                        
                                         
                                         }
                                         {
