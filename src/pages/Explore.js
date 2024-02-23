@@ -39,11 +39,11 @@ const Explore = () => {
                 <div className='col-9'>
                     <img src={`http://storeapi.gerasim.in/customer/${projectdetail.bannerImageName}`} className="img-fluid" />
                     <div>
-                        <h3 className='text-start'>Description</h3>
-                        {projectdetail.description}
+                        <h3 className='text-start mt-3'>Description</h3>
+                        <div dangerouslySetInnerHTML={{ __html: projectdetail.description }} />                     
                     </div>
                     <div>
-                        <h3 className='text-start'>Flow Diagram</h3>
+                        <h3 className='text-start mt-3'>Flow Diagram</h3>
                         <img src={`http://storeapi.gerasim.in/customer/${projectdetail.flowChartImageName}`} className="img-fluid" />
                     </div>
                 </div>
