@@ -18,11 +18,17 @@ const Home = () => {
     return (
         <div>
             <Slider />
-            <div className="col-lg-12 main-page mt-2">
+            <div className="col-lg-12 main-page mt-4">
                 <h4>Top <em>Trending</em> Project<em> Ideas</em></h4>
             </div>
-            <ProjectCard itemlist={itemlist}></ProjectCard>
-            <div className='container-fluid'>               
+            <div className="row">
+                {itemlist && itemlist.slice(0, 6).map((item, index) => (
+                    <div className="col-lg-6 mb-4" key={index}>
+                        <ProjectCard item={item} index={index} />
+                    </div>
+                ))}
+            </div>
+            <div className='container-fluid'>
                 <div className="container">
                     <div className="row mt-5">
                         <div className="col-lg-7">
@@ -34,7 +40,7 @@ const Home = () => {
                                 </p>
                             </div>
                         </div>
-                    </div>                   
+                    </div>
                     <div>
                         <Footer></Footer>
                     </div>
