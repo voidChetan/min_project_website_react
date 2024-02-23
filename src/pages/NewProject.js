@@ -375,8 +375,11 @@ const NewProject = ({ placeholder }) => {
                                         <button className='btn btn-secondary' onClick={reset}>Reset</button>
                                     </div>
                                     <div className='col-10 text-end'>
+                                        
                                         {
-                                            projectObj.projectId == 0 && <button className='btn btn-success btn-primary' onClick={addAllProjectData}>Add Project</button>
+                                            console.log(projectObj.projectId);
+
+                                            projectObj.projectId ==0 && <button className='btn btn-success btn-primary' onClick={addAllProjectData}>Add Project</button>
                                         }
                                         {
                                             projectObj.projectId !== 0 && <button className='btn btn-success btn-warning' onClick={updateAllProjectList}>Update</button>
