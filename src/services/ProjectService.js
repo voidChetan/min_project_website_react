@@ -9,36 +9,36 @@ const GetProjectsForMainPage = async () => {
     } catch (error) {
         console.log(error);
     }
-}; 
+};
 
 
 
 
-const getDateOnly = (date)=>{
-    const myDate  = new Date(date);
+const getDateOnly = (date) => {
+    const myDate = new Date(date);
     const year = myDate.getFullYear();
-    const month = myDate.getMonth()+1;
+    const month = myDate.getMonth() + 1;
     const day = myDate.getDate();
-    
-    const newDate = day + '/' +month +  '/' + year;
+
+    const newDate = day + '/' + month + '/' + year;
     return newDate;
 }
 
-const addProjectData = async(Obj)=>{
+const addProjectData = async (Obj) => {
     const result = await axios.post(apiEndPoint + myconstant.ADD_PROJECT, Obj);
     return result.data
 }
-const getCategoryName =async()=>{
+const getCategoryName = async () => {
     try {
         const result = await axios.get(apiEndPoint + myconstant.GET_CATEGORY_NAME);
         return result.data
     } catch (error) {
-        console.log(error); 
+        console.log(error);
     }
-   }
+}
 
-const fileUpload =async(Obj)=>{
-    const result = await axios.post('https://storeapi.gerasim.in/api/Customer/Upload' , Obj);
+const fileUpload = async (Obj) => {
+    const result = await axios.post('https://storeapi.gerasim.in/api/Customer/Upload', Obj);
     return result.data
 }
 
@@ -48,8 +48,7 @@ const showProjectList = async () => {
 }
 const editProject = async (id) => {
     try {
-        const result = await axios.get(apiEndPoint + myconstant.EDIT_PROJECT + id)
-       
+        const result = await axios.get(apiEndPoint + myconstant.EDIT_PROJECT + id);
         return result.data
     } catch (error) {
         alert(error.code)
@@ -65,5 +64,5 @@ const onDeleteProject = async (id) => {
 };
 
 
-export { GetProjectsForMainPage,showProjectList, getDateOnly, addProjectData, getCategoryName, fileUpload,editProject,onDeleteProject  };
+export { GetProjectsForMainPage, showProjectList, getDateOnly, addProjectData, getCategoryName, fileUpload, editProject, onDeleteProject };
 
