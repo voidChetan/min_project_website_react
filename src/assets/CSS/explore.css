@@ -1,0 +1,49 @@
+.categorieslist {
+    list-style: none;
+}
+
+.categorieslist li {
+    margin-bottom: 20px;
+}
+
+.categorieslist li a {
+    color: #22100d;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.categorieslist .faAngleRight {
+    color: #f66962;
+    font-size: 18px;
+    margin-right: 19px;
+}
+
+.categorieslist li a:hover {
+    color: #f66962;
+}
+
+.tags a {
+    text-decoration: none;
+    color: #22100d;
+}
+.tags li{
+    list-style: none;
+    display: inline-block; 
+}
+.tags li a:hover{
+    background-color:#da9b98 !important;
+}
+.tag {
+    background-color: #ffdeda;
+    border-radius: 5px;
+    color: #22100d;
+    padding: 5px 10px;
+    position: relative;
+    margin: 0 15px 15px 0;
+    font-size: 14px;
+    border: 1px solid #ffdeda;
+    display: inline-block;
+    font-weight: 500;
+    overflow: hidden;
+}

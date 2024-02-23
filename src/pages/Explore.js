@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { GetProjectProjectId, GetProjectsForMainPage } from '../services/ProjectService';
 import { getCategoryName } from '../services/CategoryService';
+import '../assets/CSS/explore.css'
 
 const Explore = () => {
     const location = useLocation();
@@ -31,7 +32,7 @@ const Explore = () => {
         fetchProjectDetail();
     }, [projectId]);
     if (!projectdetail) {
-        return <div>Loading...</div>; 
+        return <div>Loading...</div>;
     }
     return (
         <div className='container mt-5'>
@@ -40,7 +41,7 @@ const Explore = () => {
                     <img src={`http://storeapi.gerasim.in/customer/${projectdetail.bannerImageName}`} className="img-fluid" />
                     <div>
                         <h3 className='text-start mt-3'>Description</h3>
-                        <div dangerouslySetInnerHTML={{ __html: projectdetail.description }} />                     
+                        <div dangerouslySetInnerHTML={{ __html: projectdetail.description }} />
                     </div>
                     <div>
                         <h3 className='text-start mt-3'>Flow Diagram</h3>
@@ -49,7 +50,7 @@ const Explore = () => {
                 </div>
                 <div className='col-3'>
                     <div style={{ border: '1px solid #e9ecef' }}>
-                        <form class="example" action="/action_page.php" style={{ margin: '20px', maxWidth: '300px' }}>
+                        <form className="example" action="/action_page.php" style={{ margin: '20px', maxWidth: '300px' }}>
                             <input type="text" placeholder="Search.." name="search2" />
                             <button type="submit" style={{ backgroundColor: 'red', color: 'white' }}><FontAwesomeIcon className='icon' icon={faSearch} /></button>
                         </form>
@@ -71,11 +72,36 @@ const Explore = () => {
                     </div>
                     <div className='p-3 mt-4 text-start' style={{ border: '1px solid #e9ecef' }} >
                         <h5 >Categories</h5>
-                        {Array.isArray(category) && category.slice(0, 6).map((item) => {
-                            return (
-                                <li>{item.categoryName}</li>
-                            )
-                        })}
+                        <ul className='categorieslist'>
+                            {Array.isArray(category) && category.slice(0, 6).map((item) => {
+                                return (
+                                    <li><a href="#"><FontAwesomeIcon icon={faAngleRight} className='faAngleRight' /> {item.categoryName} </a>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                    <div  className='p-3 mt-4 text-start' style={{ border: '1px solid #e9ecef' }}>                   
+                            <h4>Archives</h4>                                              
+                            <ul className='categorieslist'>
+                                <li><a href="#"><FontAwesomeIcon icon={faAngleRight} className='faAngleRight' /> January 2022
+                                </a></li>
+                                <li><a href="#"><FontAwesomeIcon icon={faAngleRight} className='faAngleRight' /> February 2022
+                                </a></li>
+                                <li><a href="#"><FontAwesomeIcon icon={faAngleRight} className='faAngleRight' /> April 2022 </a>
+                                </li>
+                            </ul>                      
+                    </div>
+                    <div  className='p-3 mt-4 text-start' style={{ border: '1px solid #e9ecef' }}>                       
+                            <h4>Latest Tags</h4>                                               
+                            <ul className="tags">
+                                <li><a href="#" className="tag">HTML</a></li>
+                                <li><a href="#" className="tag">Java Script</a></li>
+                                <li><a href="#" className="tag">Css</a></li>
+                                <li><a href="#" className="tag">Jquery</a></li>
+                                <li><a href="#" className="tag">Java</a></li>
+                                <li><a href="#" className="tag">React</a></li>
+                            </ul>                     
                     </div>
                 </div>
             </div>
