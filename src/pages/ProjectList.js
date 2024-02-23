@@ -52,7 +52,6 @@ const ProjectList = () => {
     
     
 
-
     const edit = (projectId) => {
         debugger;
         editProject(projectId).then((data) => {
@@ -84,6 +83,10 @@ const ProjectList = () => {
             }
         })
     }
+   
+
+
+   
 
     const deleteProjectData = (projectId) => {
         onDeleteProject(projectId).then((data) => {
