@@ -56,7 +56,7 @@ const Explore = () => {
                         </form>
                     </div>
                     <div className='p-3 mt-4' style={{ border: '1px solid #e9ecef' }}>
-                        <h5 className='text-start'>Latest Projects</h5>
+                        <h5 className='headingmarging'>Latest Projects</h5>
                         {itemlist && itemlist.slice(0, 3).map((item, index) => {
                             return (
                                 <div className='row'>
@@ -71,7 +71,7 @@ const Explore = () => {
                         })}
                     </div>
                     <div className='p-3 mt-4 text-start' style={{ border: '1px solid #e9ecef' }} >
-                        <h5 >Categories</h5>
+                        <h5 className='headingmarging'>Categories</h5>
                         <ul className='categorieslist'>
                             {Array.isArray(category) && category.slice(0, 6).map((item) => {
                                 return (
@@ -82,7 +82,7 @@ const Explore = () => {
                         </ul>
                     </div>
                     <div  className='p-3 mt-4 text-start' style={{ border: '1px solid #e9ecef' }}>                   
-                            <h4>Archives</h4>                                              
+                            <h5 className='headingmarging'>Archives</h5>                                              
                             <ul className='categorieslist'>
                                 <li><a href="#"><FontAwesomeIcon icon={faAngleRight} className='faAngleRight' /> January 2022
                                 </a></li>
@@ -93,7 +93,7 @@ const Explore = () => {
                             </ul>                      
                     </div>
                     <div  className='p-3 mt-4 text-start' style={{ border: '1px solid #e9ecef' }}>                       
-                            <h4>Latest Tags</h4>                                               
+                            <h5 className='headingmarging'>Latest Tags</h5>                                               
                             <ul className="tags">
                                 <li><a href="#" className="tag">HTML</a></li>
                                 <li><a href="#" className="tag">Java Script</a></li>
