@@ -7,6 +7,8 @@ import ProjectList from '../pages/ProjectList'
 import Category from '../pages/Category'
 import ContactUs from '../pages/ContactUs'
 import QueryList from '../pages/QueryList'
+import NewProject from '../pages/NewProject'
+import Explore from '../pages/Explore';
 const AppRoutes = () => {
 
     return (
@@ -20,6 +22,8 @@ const AppRoutes = () => {
                     <Route path='/Category' element={<Category></Category>}></Route>
                     <Route path='/ContactUs' element={<ContactUs></ContactUs>}></Route>
                     <Route path='/Query' element={<QueryList></QueryList>}></Route>
+                    <Route path='/NewProject' element={<NewProject></NewProject>}></Route>
+                    <Route path='/Explore' element={<Explore></Explore>}></Route>
                 </Routes>
 
             </BrowserRouter>
