@@ -34,6 +34,8 @@ const NewProject = ({ placeholder }) => {
     const navigate = useNavigate();
     const location = useLocation();
     const { project } = location.state;
+   
+      
 
     const handleInputChange = (event, key) => {
         setProjectObj(prevObj => ({ ...prevObj, [key]: event.target.value }));
