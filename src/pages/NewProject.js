@@ -1,10 +1,11 @@
 
 import { useState, useEffect, useRef, useMemo} from 'react';
-import { useNavigate,} from 'react-router-dom';
-import { addProjectData, getCategoryName, getDateOnly, fileUpload } from '../services/ProjectService';
+import { useNavigate, useLocation} from 'react-router-dom';
+import { addProjectData, getCategoryName, getDateOnly, fileUpload, updateProject } from '../services/ProjectService';
 import JoditEditor from 'jodit-react';
 
 const NewProject = ({ placeholder }) => {
+    
     const [projectObj, setProjectObj] = useState(
         {
             projectId: 0,
@@ -31,6 +32,8 @@ const NewProject = ({ placeholder }) => {
     let [formsubmited, setFormSubmited] = useState(false);
     let [projectCategory, setProjectCategory] = useState([]);
     const navigate = useNavigate();
+    const location = useLocation();
+    const { project } = location.state;
 
     const handleInputChange = (event, key) => {
         setProjectObj(prevObj => ({ ...prevObj, [key]: event.target.value }));
@@ -100,7 +103,10 @@ const NewProject = ({ placeholder }) => {
         getAllCategoryName();
         const currentDate = new Date();
         const formatedDate = getDateOnly(currentDate);
-    }, []);
+        if (project) {
+            setProjectObj(project);
+        }
+    }, [project]);
 
     const getAllCategoryName = () => {
         getCategoryName().then((data) => {
@@ -128,7 +134,7 @@ const NewProject = ({ placeholder }) => {
     }
 
        const reset = () => {
-        formsubmited(true);
+        setFormSubmited(true)
            setProjectObj({
             projectId: 0,
             projectShortName: "",
@@ -152,21 +158,26 @@ const NewProject = ({ placeholder }) => {
         })
        
     }
+    const navigateToProjectList = (updatedProject) => {
+        navigate(`projectList?id=${updatedProject.projectId}`, { state: updatedProject })
+    }
 
     const updateAllProjectList = () => {
-        // updateProject(projectObj).then((data) => {
-        //     if (data.result) {
-        //         alert('Project Updated Sucessfully')
-        //         // getAllProjectList();
-        //     } else {
-        //         alert(data.message)
-        //     }
-        // })
+        setFormSubmited(true);
+        updateProject(projectObj).then((data) => {
+            if (data.result) {
+                alert('Project Updated Sucessfully')
+                 navigateToProjectList(projectObj);
+            } else {
+                alert(data.message)
+            }
+        })
     }
 
     const projectList = () => {
         navigate('/Project');
     }
+   
 
     return (
         <div>

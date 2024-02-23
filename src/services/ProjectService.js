@@ -63,7 +63,10 @@ const onDeleteProject = async (id) => {
 
     }
 };
+const updateProject = async(Obj)=>{
+    const result = await axios.put(apiEndPoint +myconstant.UPDATE_PROJECT_LIST, Obj);
+    return result.data
+}
 
-
-export { GetProjectsForMainPage,showProjectList, getDateOnly, addProjectData, getCategoryName, fileUpload,editProject,onDeleteProject  };
+export { GetProjectsForMainPage,showProjectList, getDateOnly, addProjectData, getCategoryName, fileUpload,editProject,onDeleteProject, updateProject  };
 
