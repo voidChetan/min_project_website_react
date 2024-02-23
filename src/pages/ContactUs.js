@@ -1,9 +1,8 @@
-import React, { useState,  } from 'react';
-import { AddQuries } from '../services/QueryService'
-import '../assets/CSS/ContactUs.css'
-// import JoditEditor from 'jodit-react';
+import { useState } from 'react';
 
-const ContactUs = ({ placeholder }) => {
+import { AddQuries } from '../services/QueryService'
+
+const ContactUs = () => {
     let [QueriesObj, setQueriesObj] = useState({
         "queryId": 0,
         "name": "",
@@ -49,68 +48,55 @@ const ContactUs = ({ placeholder }) => {
     }
     
     return (
-        <div>
-            
-            <div class="container mt-5">
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <div class="form-container">
-                            <h2 class="mb-4">Contact Form</h2>
-                            <form>
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="name" value={QueriesObj.name} onChange={(event) => { Onchangehandle(event, 'name') }} placeholder="Enter your name" />
-                                    <div className='text-danger'>
-                                        {
-                                            isFormSubmitted && QueriesObj.name == '' && <span> Name is Required.</span>
-                                        }
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" value={QueriesObj.emialId} onChange={(event) => { Onchangehandle(event, 'emialId') }} placeholder="Enter your email" />
-                                    <div className='text-danger'>
-                                        {
-                                            isFormSubmitted && QueriesObj.emialId == '' && <span> EmialId is required.</span>
-                                        }
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="contact" class="form-label">Contact Number</label>
-                                    <input type="tel" class="form-control" id="contact" value={QueriesObj.contactNo} onChange={(event) => { Onchangehandle(event, 'contactNo') }} placeholder="Enter your contact number" />
-                                    <div className='text-danger'>
-                                        {
-                                            isFormSubmitted && QueriesObj.name == '' && <span>Contact No is Required.</span>
-                                        }
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="city" class="form-label">City</label>
-                                    <input type="text" class="form-control" id="city" value={QueriesObj.city} onChange={(event) => { Onchangehandle(event, 'city') }} placeholder="Enter your city" />
-                                    <div className='text-danger'>
-                                    {
-                                        isFormSubmitted && QueriesObj.city == '' && <span>City is Required.</span>
-                                    }
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="country" class="form-label">Country</label>
-                                    <input type="text" class="form-control" id="country" value={QueriesObj.country} onChange={(event) => { Onchangehandle(event, 'country') }} placeholder="Enter your country" />
-                                    <div className='text-danger'>
-                                    {
-                                        isFormSubmitted && QueriesObj.country == '' && <span>Country is Required.</span>
-                                    }
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-primary" onClick={addQueries}>Submit</button>
-                            </form>
-                        </div>
-                    </div>
+        <div className="container mt-5 d-flex " style={{ backgroundColor: '	#fff8dc' }}>
+            <div className='row'>
+                <div className='col-6  text-center' >
+                    <h1>Contact Us</h1>
+                    <p style={{fontWeight:'70px' ,fontSize:'25px',lineHeight:'45px'}}>We're here to assist you! If you have
+                    any questions or need assistance,please feel free to reach out to us.<br></br><br></br>
+                        You can also email us. Click here  to reveal email address
+                        <a href="https://veilmail.io/e/FkKh7o">https://veilmail.io/e/FkKh7o</a> <br></br><br></br>
+                        We use VeilMail.io to protect your email address from spam.</p>
                 </div>
+                <div className='col-6 text-center' >
+                    <h1>Contact Form</h1>
+                    <div className='row pe-4'>
+                        {/* <div className='col-4'> */}
+                        <label for="name" class="form-label">Name</label>
+                        <input type="email" class="form-control" id="email" value={QueriesObj.name} onChange={(event) => { Onchangehandle(event, 'name') }}placeholder="Enter your Name" />
+
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" value={QueriesObj.emialId} onChange={(event) => { Onchangehandle(event, 'emialId') }}placeholder="Enter your email" />
+
+                        <label for="email" class="form-label">Contact Number</label>
+                        <input type="email" class="form-control" id="email" value={QueriesObj.contactNo} onChange={(event) => { Onchangehandle(event, 'contactNo') }} placeholder="Enter your contact number" />
+
+                        <label for="email" class="form-label">City</label>
+                        <input type="email" class="form-control" id="email" value={QueriesObj.city} onChange={(event) => { Onchangehandle(event, 'city') }}placeholder="Enter your Cityl" />
+
+                        <label for="email" class="form-label">Country</label>
+                        <input type="email" class="form-control" id="email" value={QueriesObj.country} onChange={(event) => { Onchangehandle(event, 'country') }}placeholder="Enter your Country" />
+                    </div>
+                    <div className='row'>
+                        <div className='col-4 pt-4 m-4'>
+                            <button className='btn btn-lg btn-success' onClick={addQueries}>save</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
             </div>
-         
 
         </div>
+
+        // </div>
+
+
+
+
+
 
     );
 };
