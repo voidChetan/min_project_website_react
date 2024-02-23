@@ -22,8 +22,7 @@ const Home = () => {
                 <h4>Top <em>Trending</em> Project<em> Ideas</em></h4>
             </div>
             <ProjectCard itemlist={itemlist}></ProjectCard>
-            <div className='container-fluid'>
-                <Slider />
+            <div className='container-fluid'>               
                 <div className="container">
                     <div className="row mt-5">
                         <div className="col-lg-7">
@@ -35,8 +34,7 @@ const Home = () => {
                                 </p>
                             </div>
                         </div>
-                    </div>
-                    <ProjectCard></ProjectCard>
+                    </div>                   
                     <div>
                         <Footer></Footer>
                     </div>

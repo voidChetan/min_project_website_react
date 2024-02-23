@@ -26,3 +26,4 @@ export const GET_CATEGORY_NAME = "GetAllProjectCategories";
 export const GET_ALL_QURIES = "GetAllQuries";
 export const EDIT_PROJECT = "GetProjectProjectId?id=";
 export const DELETE_PROJECT = "DeleteProjectById?id=";
+export const GET_PROJECT_BY_ID="GetProjectProjectId"
