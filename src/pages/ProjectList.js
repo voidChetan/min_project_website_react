@@ -12,6 +12,8 @@ const ProjectList = () => {
     const [isLoader, setIsLoader] = useState(true);
     const [projectList, setProjectList] = useState([]);
 
+   
+
 
 
 
@@ -49,16 +51,19 @@ const ProjectList = () => {
         setIsShowCard(false);
     };
     const AddData = () => {
+      
         navigate('/NewProject', { state: { project: { /* default or placeholder data */ } } });
     };
     
     
 
     const edit = (projectId) => {
+   
         debugger;
         editProject(projectId).then((data) => {
             if (data.result) {
                 debugger;
+              
                 navigate(`/NewProject?id=${projectId}`, { state: { project: data.data } });
                 debugger;
             } else {
@@ -86,8 +91,7 @@ const ProjectList = () => {
         })
     }
    
-
-
+   
    
 
     const deleteProjectData = (projectId) => {

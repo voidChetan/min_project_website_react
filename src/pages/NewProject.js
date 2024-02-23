@@ -4,7 +4,7 @@ import { useNavigate, useLocation} from 'react-router-dom';
 import { addProjectData, getCategoryName, getDateOnly, fileUpload, updateProject } from '../services/ProjectService';
 import JoditEditor from 'jodit-react';
 
-const NewProject = ({ placeholder }) => {
+const NewProject = ({ placeholder}) => {
     
     const [projectObj, setProjectObj] = useState(
         {
@@ -33,9 +33,11 @@ const NewProject = ({ placeholder }) => {
     let [projectCategory, setProjectCategory] = useState([]);
     const navigate = useNavigate();
     const location = useLocation();
-    const { project } = location.state;
+    const { project } = location.state || {};
+    
    
-      
+
+
 
     const handleInputChange = (event, key) => {
         setProjectObj(prevObj => ({ ...prevObj, [key]: event.target.value }));
@@ -70,7 +72,8 @@ const NewProject = ({ placeholder }) => {
     const handleThumbnailImageChange = async (event) => {
         const file = event.target.files[0];
         const formData = new FormData();
-        formData.append('file', file);
+        
+         formData.append('file', file);
         fileUpload(formData).then((data) => {
             if (data) {
                 alert("Thumbnail Image Upload Sucessfully");
@@ -387,16 +390,18 @@ const NewProject = ({ placeholder }) => {
                                     <div className='col-2 text-start'>
                                         <button className='btn btn-secondary' onClick={reset}>Reset</button>
                                     </div>
+                                    
                                     <div className='col-10 text-end'>
-                                        
+                                       
                                         {
-                                           
-
-                                            projectObj.projectId ==0 && <button className='btn btn-success btn-primary' onClick={addAllProjectData}>Add Project</button>
+                                        projectObj.projectId ==0 && <button className='btn btn-success btn-primary' onClick={addAllProjectData}>Add Project</button>
+                                        
+                                        
                                         }
                                         {
                                             projectObj.projectId !== 0 && <button className='btn btn-success btn-warning' onClick={updateAllProjectList}>Update</button>
                                         }
+                                 
                                     </div>
 
                                 </div>
