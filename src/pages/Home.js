@@ -5,9 +5,13 @@ import { GetProjectsForMainPage } from '../services/ProjectService';
 import ProjectCard from './ProjectCard';
 import '../assets/CSS/Home.css';
 import Footer from './Footer';
-
+import { useSelector } from 'react-redux';
 
 const Home = () => {
+
+    const reducerData = useSelector(state=>state);
+    debugger;
+
     const [itemlist, steItemlist] = useState([])
     useEffect(() => {
         GetProjectsForMainPage().then((data) => {
@@ -20,6 +24,15 @@ const Home = () => {
             <Slider />
             <div className="col-lg-12 main-page mt-4">
                 <h4>Top <em>Trending</em> Project<em> Ideas</em></h4>
+            </div>
+            <div>
+                <ul>
+                    {
+                        reducerData.reducer.categoryData.data.map((item)=> {
+                            return (<li>{item.categoryName}</li>)
+                        })
+                    }
+                </ul>
             </div>
             <div className="row">
                 {itemlist && itemlist.slice(0, 6).map((item, index) => (

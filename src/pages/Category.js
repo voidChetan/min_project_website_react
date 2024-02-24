@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCategiryData } from '../Redux/react-redux/action';
 import { addCategoryData, getCategoryName, deleteCategoryData, updateCategory } from '../services/CategoryService';
 const Category = () => {
-    const [categoryObj, setcategoryObj] = useState(
 
-        {
-            projectCategoryId: 0,
-            categoryName: "",
-            bannerImageName: "",
-            isActive: true
-        }
+    const reducerData = useSelector(state => state); 
+    const dispatch = useDispatch();
 
-    );
+    const [categoryObj, setcategoryObj] = useState( { projectCategoryId: 0,  categoryName: "", bannerImageName: "",  isActive: true } );
     let [isLoader, setIsLoader] = useState(true)
     let [formsubmited, setFormSubmited] = useState(false);
     let [isShowForm, setisShowForm] = useState(false);
@@ -26,13 +23,17 @@ const Category = () => {
     };
 
     useEffect(() => {
-        getAllCategoryName();
+        getAllCategory();
 
     }, [])
 
-    const getAllCategoryName = () => {
+    const getAllCategory = () => {
+        debugger;
         getCategoryName().then((data) => {
-            setCategoryList(data.data);
+            debugger;
+            dispatch(getCategiryData(data))
+
+            setCategoryList(data);
             setIsLoader(false)
         })
 
@@ -47,7 +48,7 @@ const Category = () => {
             addCategoryData(categoryObjData).then((data) => {
                 if (data.result) {
                     alert("Category Added Successfully");
-                    getAllCategoryName();
+                    getAllCategory();
                     resetForm();
                 } else {
                     alert(data.message);
@@ -90,7 +91,7 @@ const Category = () => {
             updateCategory(categoryObjData).then((data) => {
                 if (data.result) {
                     alert('Category Updated Sucessfully');
-                    getAllCategoryName();
+                    getAllCategory();
                     resetForm();
                 } else {
                     alert(data.message);
@@ -116,7 +117,7 @@ const Category = () => {
             deleteCategoryData(projectCategoryId).then((data) => {
                 if (data.result) {
                     alert(' Category Deleted Sucessfully');
-                    getAllCategoryName();
+                    getAllCategory();
                 } else {
                     alert(data.message);
                 }
