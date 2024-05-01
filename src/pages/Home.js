@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 
 const Home = () => {
 
-    //const reducerData = useSelector(state=>state);
+    const reducerData = useSelector(state=>state);
     debugger;
 
     const [itemlist, steItemlist] = useState([])
@@ -25,7 +25,7 @@ const Home = () => {
             <div className="col-lg-12 main-page mt-4">
                 <h4>Top <em>Trending</em> Project<em> Ideas</em></h4>
             </div>
-            {/* <div>
+            <div>
                 <ul>
                     {
                         reducerData.reducer.categoryData.data.map((item)=> {
@@ -33,7 +33,7 @@ const Home = () => {
                         })
                     }
                 </ul>
-            </div> */}
+            </div>
             <div className="row">
                 {itemlist && itemlist.slice(0, 6).map((item, index) => (
                     <div className="col-lg-6 mb-4" key={index}>

@@ -4,7 +4,7 @@ import { getCategiryData } from '../Redux/react-redux/action';
 import { addCategoryData, getCategoryName, deleteCategoryData, updateCategory } from '../services/CategoryService';
 const Category = () => {
 
-    const reducerData = useSelector(state => state); 
+    // const reducerData = useSelector(state => state); 
     const dispatch = useDispatch();
 
     const [categoryObj, setcategoryObj] = useState( { projectCategoryId: 0,  categoryName: "", bannerImageName: "",  isActive: true } );
@@ -12,15 +12,15 @@ const Category = () => {
     let [formsubmited, setFormSubmited] = useState(false);
     let [isShowForm, setisShowForm] = useState(false);
     let [isShowCard, setisShowCard] = useState(false);
-    let [searchData, setSearchData] = useState('');
+    // let [searchData, setSearchData] = useState('');
     let [categoryList, setCategoryList] = useState([]);
 
     const handleInputChange = (event, key) => {
         setcategoryObj(prevObj => ({ ...prevObj, [key]: event.target.value }));
     };
-    const handleSearchInputChange = (event) => {
-        setSearchData(event.target.value);
-    };
+    // const handleSearchInputChange = (event) => {
+    //     setSearchData(event.target.value);
+    // };
 
     useEffect(() => {
         getAllCategory();
