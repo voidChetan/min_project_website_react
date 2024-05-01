@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/min_project_website_react/static/css/main.c0f798df.css",
+    "main.js": "/min_project_website_react/static/js/main.d0fc02d3.js",
+    "static/js/453.42b00199.chunk.js": "/min_project_website_react/static/js/453.42b00199.chunk.js",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/min_project_website_react/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/banner-02.jpg": "/min_project_website_react/static/media/banner-02.94df83bb69a9d6d95214.jpg",
+    "static/media/banner-04.jpg": "/min_project_website_react/static/media/banner-04.5f242af65c72f8b6cf99.jpg",
+    "static/media/miniLogo.svg": "/min_project_website_react/static/media/miniLogo.222362bdaf9b2ad17c86de9501b6e6ef.svg",
+    "static/media/banner-01.jpg": "/min_project_website_react/static/media/banner-01.915a5d3f12bc7d7222c4.jpg",
+    "static/media/fontawesome-webfont.eot": "/min_project_website_react/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/min_project_website_react/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/min_project_website_react/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/banner-03.jpg": "/min_project_website_react/static/media/banner-03.883616fde7bf3d147a3f.jpg",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/min_project_website_react/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/leftimg.jpg": "/min_project_website_react/static/media/leftimg.79075ffce10a2104f7e1.jpg",
+    "index.html": "/min_project_website_react/index.html",
+    "main.c0f798df.css.map": "/min_project_website_react/static/css/main.c0f798df.css.map",
+    "main.d0fc02d3.js.map": "/min_project_website_react/static/js/main.d0fc02d3.js.map",
+    "453.42b00199.chunk.js.map": "/min_project_website_react/static/js/453.42b00199.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c0f798df.css",
+    "static/js/main.d0fc02d3.js"
+  ]
+}
